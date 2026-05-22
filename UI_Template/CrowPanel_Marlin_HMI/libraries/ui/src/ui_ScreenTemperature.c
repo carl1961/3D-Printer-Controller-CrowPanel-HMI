@@ -100,7 +100,7 @@ void ui_event_ArcBed(lv_event_t * e)
     lv_obj_t * target = lv_event_get_target(e);
 
     if(event_code == LV_EVENT_VALUE_CHANGED) {
-        ui_eventLabelBedValue(e);
+        ui_eventArcBed(e);
     }
     if(event_code == LV_EVENT_VALUE_CHANGED) {
         _ui_arc_set_text_value(ui_LabelBedValue, target, "", "");

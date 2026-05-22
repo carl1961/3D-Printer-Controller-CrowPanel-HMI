@@ -15,7 +15,7 @@ void ui_eventArcOverall(lv_event_t * e)
 	// Your code here
 }
 
-void ui_event_BarHotend(lv_event_t * e)
+void ui_eventBarHotend(lv_event_t * e)
 {
 	// Your code here
 }
@@ -590,7 +590,7 @@ void ui_eventArcHotend(lv_event_t * e)
 	// Your code here
 }
 
-void ui_eventLabelBedValue(lv_event_t * e)
+void ui_eventArcBed(lv_event_t * e)
 {
 	// Your code here
 }

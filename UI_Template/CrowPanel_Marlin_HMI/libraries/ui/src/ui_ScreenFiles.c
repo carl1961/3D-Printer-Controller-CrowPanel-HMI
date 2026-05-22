@@ -23,6 +23,7 @@ lv_obj_t * ui_LabelFileItem;
 lv_obj_t * ui_BtnFileItem;
 lv_obj_t * ui_PanelFileList;
 lv_obj_t * ui_LabelFreeSpace;
+lv_obj_t * ui_LabelRefresh;
 lv_obj_t * ui_BtnRefresh;
 lv_obj_t * ui_LabelTitle1;
 lv_obj_t * ui_LabelBack4;
@@ -34,7 +35,7 @@ lv_obj_t * ui_BtnBack4 = NULL;
 lv_obj_t * ui_LabelBack4 = NULL;
 lv_obj_t * ui_LabelTitle1 = NULL;
 lv_obj_t * ui_BtnRefresh = NULL;
-lv_obj_t * ui_Label7 = NULL;
+lv_obj_t * ui_LabelRefresh = NULL;
 lv_obj_t * ui_LabelFreeSpace = NULL;
 lv_obj_t * ui_PanelFileList = NULL;
 lv_obj_t * ui_BtnFileItem = NULL;
@@ -55,7 +56,6 @@ lv_obj_t * ui_BtnUpFolderDown = NULL;
 lv_obj_t * ui_LabelDown = NULL;
 lv_obj_t * ui_Image2 = NULL;
 lv_obj_t * ui_LabelCurrevtFolder = NULL;
-lv_obj_t * ui_Label20 = NULL;
 // event funtions
 void ui_event_BtnBack4(lv_event_t * e)
 {
@@ -182,16 +182,16 @@ void ui_ScreenFiles_screen_init(void)
     lv_obj_add_flag(ui_BtnRefresh, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_BtnRefresh, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_Label7 = lv_label_create(ui_ScreenFiles);
-    lv_obj_set_width(ui_Label7, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label7, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label7, 544);
-    lv_obj_set_y(ui_Label7, 21);
-    lv_label_set_text(ui_Label7, "Refresh\n");
-    lv_obj_set_style_text_color(ui_Label7, lv_color_hex(0xFBF9F9), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_Label7, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui_Label7, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_Label7, &lv_font_montserrat_22, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_LabelRefresh = lv_label_create(ui_ScreenFiles);
+    lv_obj_set_width(ui_LabelRefresh, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_LabelRefresh, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_LabelRefresh, 544);
+    lv_obj_set_y(ui_LabelRefresh, 21);
+    lv_label_set_text(ui_LabelRefresh, "Refresh\n");
+    lv_obj_set_style_text_color(ui_LabelRefresh, lv_color_hex(0xFBF9F9), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_LabelRefresh, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui_LabelRefresh, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LabelRefresh, &lv_font_montserrat_22, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_LabelFreeSpace = lv_label_create(ui_ScreenFiles);
     lv_obj_set_width(ui_LabelFreeSpace, LV_SIZE_CONTENT);   /// 1
@@ -404,13 +404,6 @@ void ui_ScreenFiles_screen_init(void)
     lv_obj_set_style_text_align(ui_LabelCurrevtFolder, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_LabelCurrevtFolder, &lv_font_montserrat_22, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Label20 = lv_label_create(ui_ScreenFiles);
-    lv_obj_set_width(ui_Label20, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label20, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label20, 657);
-    lv_obj_set_y(ui_Label20, -217);
-    lv_obj_set_align(ui_Label20, LV_ALIGN_CENTER);
-
     lv_obj_add_event_cb(ui_BtnBack4, ui_event_BtnBack4, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnRefresh, ui_event_BtnRefresh, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnFileItem, ui_event_BtnFileItem, LV_EVENT_ALL, NULL);
@@ -424,6 +417,7 @@ void ui_ScreenFiles_screen_init(void)
     ui_LabelBack4 = ui_LabelBack4;
     ui_LabelTitle1 = ui_LabelTitle1;
     ui_BtnRefresh = ui_BtnRefresh;
+    ui_LabelRefresh = ui_LabelRefresh;
     ui_LabelFreeSpace = ui_LabelFreeSpace;
     ui_PanelFileList = ui_PanelFileList;
     ui_BtnFileItem = ui_BtnFileItem;
@@ -461,7 +455,8 @@ void ui_ScreenFiles_screen_destroy(void)
     ui_LabelTitle1 = NULL;
     ui_BtnRefresh = NULL;
     ui_BtnRefresh = NULL;
-    ui_Label7 = NULL;
+    ui_LabelRefresh = NULL;
+    ui_LabelRefresh = NULL;
     ui_LabelFreeSpace = NULL;
     ui_LabelFreeSpace = NULL;
     ui_PanelFileList = NULL;
@@ -500,6 +495,5 @@ void ui_ScreenFiles_screen_destroy(void)
     ui_Image2 = NULL;
     ui_LabelCurrevtFolder = NULL;
     ui_LabelCurrevtFolder = NULL;
-    ui_Label20 = NULL;
 
 }

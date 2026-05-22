@@ -6,7 +6,8 @@
 #include "ui.h"
 
 lv_obj_t * ui_LabelSensitivityValue;
-lv_obj_t * ui_LabelRefresh_Status;
+lv_obj_t * ui_LabelRefreshStatus;
+lv_obj_t * ui_BtnRefreshStatus;
 lv_obj_t * ui_LabelSaveToEEPROM;
 lv_obj_t * ui_BtnSaveSensors;
 lv_obj_t * ui_LabelApplySensors;
@@ -48,8 +49,8 @@ lv_obj_t * ui_BtnApplySensors = NULL;
 lv_obj_t * ui_LabelApplySensors = NULL;
 lv_obj_t * ui_BtnSaveSensors = NULL;
 lv_obj_t * ui_LabelSaveToEEPROM = NULL;
-lv_obj_t * ui_BtnRefresh_Status = NULL;
-lv_obj_t * ui_LabelRefresh_Status = NULL;
+lv_obj_t * ui_BtnRefreshStatus = NULL;
+lv_obj_t * ui_LabelRefreshStatus = NULL;
 lv_obj_t * ui_LabelSensitivityValue = NULL;
 // event funtions
 void ui_event_BtnBack3(lv_event_t * e)
@@ -128,7 +129,7 @@ void ui_event_BtnSaveSensors(lv_event_t * e)
     }
 }
 
-void ui_event_BtnRefresh_Status(lv_event_t * e)
+void ui_event_BtnRefreshStatus(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
 
@@ -390,26 +391,26 @@ void ui_ScreenFilament_screen_init(void)
     lv_obj_set_style_text_align(ui_LabelSaveToEEPROM, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_LabelSaveToEEPROM, &lv_font_montserrat_22, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_BtnRefresh_Status = lv_btn_create(ui_ScreenFilament);
-    lv_obj_set_width(ui_BtnRefresh_Status, 137);
-    lv_obj_set_height(ui_BtnRefresh_Status, 83);
-    lv_obj_set_x(ui_BtnRefresh_Status, 26);
-    lv_obj_set_y(ui_BtnRefresh_Status, 150);
-    lv_obj_set_align(ui_BtnRefresh_Status, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_BtnRefresh_Status, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_BtnRefresh_Status, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_BtnRefreshStatus = lv_btn_create(ui_ScreenFilament);
+    lv_obj_set_width(ui_BtnRefreshStatus, 137);
+    lv_obj_set_height(ui_BtnRefreshStatus, 83);
+    lv_obj_set_x(ui_BtnRefreshStatus, 26);
+    lv_obj_set_y(ui_BtnRefreshStatus, 150);
+    lv_obj_set_align(ui_BtnRefreshStatus, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_BtnRefreshStatus, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_BtnRefreshStatus, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_LabelRefresh_Status = lv_label_create(ui_BtnRefresh_Status);
-    lv_obj_set_width(ui_LabelRefresh_Status, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_LabelRefresh_Status, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_LabelRefresh_Status, -3);
-    lv_obj_set_y(ui_LabelRefresh_Status, -1);
-    lv_obj_set_align(ui_LabelRefresh_Status, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_LabelRefresh_Status, " Refresh \n  Status");
-    lv_obj_set_style_text_color(ui_LabelRefresh_Status, lv_color_hex(0xFDFBFB), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_LabelRefresh_Status, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui_LabelRefresh_Status, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_LabelRefresh_Status, &lv_font_montserrat_22, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_LabelRefreshStatus = lv_label_create(ui_BtnRefreshStatus);
+    lv_obj_set_width(ui_LabelRefreshStatus, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_LabelRefreshStatus, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_LabelRefreshStatus, -3);
+    lv_obj_set_y(ui_LabelRefreshStatus, -1);
+    lv_obj_set_align(ui_LabelRefreshStatus, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LabelRefreshStatus, " Refresh \n  Status");
+    lv_obj_set_style_text_color(ui_LabelRefreshStatus, lv_color_hex(0xFDFBFB), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_LabelRefreshStatus, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui_LabelRefreshStatus, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LabelRefreshStatus, &lv_font_montserrat_22, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_LabelSensitivityValue = lv_label_create(ui_ScreenFilament);
     lv_obj_set_width(ui_LabelSensitivityValue, LV_SIZE_CONTENT);   /// 1
@@ -431,7 +432,7 @@ void ui_ScreenFilament_screen_init(void)
     lv_obj_add_event_cb(ui_SliderJamSensitivity, ui_event_SliderJamSensitivity, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnApplySensors, ui_event_BtnApplySensors, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnSaveSensors, ui_event_BtnSaveSensors, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_BtnRefresh_Status, ui_event_BtnRefresh_Status, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_BtnRefreshStatus, ui_event_BtnRefreshStatus, LV_EVENT_ALL, NULL);
     ui_ScreenFilament = ui_ScreenFilament;
     ui_BtnBack3 = ui_BtnBack3;
     ui_Filament_Sensors = ui_LabelTitle2;
@@ -450,7 +451,8 @@ void ui_ScreenFilament_screen_init(void)
     ui_LabelApplySensors = ui_LabelApplySensors;
     ui_BtnSaveSensors = ui_BtnSaveSensors;
     ui_LabelSaveToEEPROM = ui_LabelSaveToEEPROM;
-    ui_LabelRefresh_Status = ui_LabelRefresh_Status;
+    ui_BtnRefreshStatus = ui_BtnRefreshStatus;
+    ui_LabelRefreshStatus = ui_LabelRefreshStatus;
     ui_LabelSensitivityValue = ui_LabelSensitivityValue;
 
 }
@@ -501,9 +503,10 @@ void ui_ScreenFilament_screen_destroy(void)
     ui_BtnSaveSensors = NULL;
     ui_LabelSaveToEEPROM = NULL;
     ui_LabelSaveToEEPROM = NULL;
-    ui_BtnRefresh_Status = NULL;
-    ui_LabelRefresh_Status = NULL;
-    ui_LabelRefresh_Status = NULL;
+    ui_BtnRefreshStatus = NULL;
+    ui_BtnRefreshStatus = NULL;
+    ui_LabelRefreshStatus = NULL;
+    ui_LabelRefreshStatus = NULL;
     ui_LabelSensitivityValue = NULL;
     ui_LabelSensitivityValue = NULL;
 

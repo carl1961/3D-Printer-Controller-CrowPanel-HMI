@@ -16,6 +16,9 @@ lv_obj_t * ui_LabelBuildDate;
 lv_obj_t * ui_LabelLVGL;
 lv_obj_t * ui_LabelVersion;
 lv_obj_t * ui_LabelSWTitle;
+lv_obj_t * ui_LabelProbe;
+lv_obj_t * ui_LabelDrivers;
+lv_obj_t * ui_LabelDisplay;
 lv_obj_t * ui_PanelSoftware;
 lv_obj_t * ui_PanelHardware;
 lv_obj_t * ui_LabelBoard;
@@ -38,9 +41,9 @@ lv_obj_t * ui_LabelBoard = NULL;
 lv_obj_t * ui_PanelHardware = NULL;
 lv_obj_t * ui_PanelSoftware = NULL;
 lv_obj_t * ui_LabelHWTitle = NULL;
-lv_obj_t * ui_Label58 = NULL;
-lv_obj_t * ui_Label59 = NULL;
-lv_obj_t * ui_Label60 = NULL;
+lv_obj_t * ui_LabelDisplay = NULL;
+lv_obj_t * ui_LabelDrivers = NULL;
+lv_obj_t * ui_LabelProbe = NULL;
 lv_obj_t * ui_LabelSWTitle = NULL;
 lv_obj_t * ui_LabelVersion = NULL;
 lv_obj_t * ui_LabelLVGL = NULL;
@@ -232,41 +235,41 @@ void ui_ScreenAbout_screen_init(void)
     lv_obj_set_style_text_align(ui_LabelHWTitle, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_LabelHWTitle, &lv_font_montserrat_26, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Label58 = lv_label_create(ui_ScreenAbout);
-    lv_obj_set_width(ui_Label58, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label58, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label58, -249);
-    lv_obj_set_y(ui_Label58, 56);
-    lv_obj_set_align(ui_Label58, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label58, "Display: 7\" 800x480 IPS");
-    lv_obj_set_style_text_color(ui_Label58, lv_color_hex(0xE5FF01), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_Label58, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui_Label58, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_Label58, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_LabelDisplay = lv_label_create(ui_ScreenAbout);
+    lv_obj_set_width(ui_LabelDisplay, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_LabelDisplay, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_LabelDisplay, -249);
+    lv_obj_set_y(ui_LabelDisplay, 56);
+    lv_obj_set_align(ui_LabelDisplay, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LabelDisplay, "Display: 7\" 800x480 IPS");
+    lv_obj_set_style_text_color(ui_LabelDisplay, lv_color_hex(0xE5FF01), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_LabelDisplay, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui_LabelDisplay, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LabelDisplay, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Label59 = lv_label_create(ui_ScreenAbout);
-    lv_obj_set_width(ui_Label59, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label59, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label59, -258);
-    lv_obj_set_y(ui_Label59, 86);
-    lv_obj_set_align(ui_Label59, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label59, "Drivers: TMC5160 (SPI)");
-    lv_obj_set_style_text_color(ui_Label59, lv_color_hex(0xF00303), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_Label59, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui_Label59, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_Label59, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_LabelDrivers = lv_label_create(ui_ScreenAbout);
+    lv_obj_set_width(ui_LabelDrivers, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_LabelDrivers, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_LabelDrivers, -258);
+    lv_obj_set_y(ui_LabelDrivers, 86);
+    lv_obj_set_align(ui_LabelDrivers, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LabelDrivers, "Drivers: TMC5160 (SPI)");
+    lv_obj_set_style_text_color(ui_LabelDrivers, lv_color_hex(0xF00303), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_LabelDrivers, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui_LabelDrivers, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LabelDrivers, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Label60 = lv_label_create(ui_ScreenAbout);
-    lv_obj_set_width(ui_Label60, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label60, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label60, -197);
-    lv_obj_set_y(ui_Label60, 116);
-    lv_obj_set_align(ui_Label60, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label60, "Probe: BDSensor  V1.2c / Eddy Coil");
-    lv_obj_set_style_text_color(ui_Label60, lv_color_hex(0x29A040), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_Label60, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui_Label60, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_Label60, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_LabelProbe = lv_label_create(ui_ScreenAbout);
+    lv_obj_set_width(ui_LabelProbe, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_LabelProbe, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_LabelProbe, -197);
+    lv_obj_set_y(ui_LabelProbe, 116);
+    lv_obj_set_align(ui_LabelProbe, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_LabelProbe, "Probe: BDSensor  V1.2c / Eddy Coil");
+    lv_obj_set_style_text_color(ui_LabelProbe, lv_color_hex(0x29A040), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_LabelProbe, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui_LabelProbe, LV_TEXT_ALIGN_AUTO, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_LabelProbe, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_LabelSWTitle = lv_label_create(ui_ScreenAbout);
     lv_obj_set_width(ui_LabelSWTitle, LV_SIZE_CONTENT);   /// 1
@@ -437,6 +440,9 @@ void ui_ScreenAbout_screen_init(void)
     ui_LabelBoard = ui_LabelBoard;
     ui_PanelHardware = ui_PanelHardware;
     ui_PanelSoftware = ui_PanelSoftware;
+    ui_LabelDisplay = ui_LabelDisplay;
+    ui_LabelDrivers = ui_LabelDrivers;
+    ui_LabelProbe = ui_LabelProbe;
     ui_LabelSWTitle = ui_LabelSWTitle;
     ui_LabelVersion = ui_LabelVersion;
     ui_LabelLVGL = ui_LabelLVGL;
@@ -478,9 +484,12 @@ void ui_ScreenAbout_screen_destroy(void)
     ui_PanelSoftware = NULL;
     ui_PanelSoftware = NULL;
     ui_LabelHWTitle = NULL;
-    ui_Label58 = NULL;
-    ui_Label59 = NULL;
-    ui_Label60 = NULL;
+    ui_LabelDisplay = NULL;
+    ui_LabelDisplay = NULL;
+    ui_LabelDrivers = NULL;
+    ui_LabelDrivers = NULL;
+    ui_LabelProbe = NULL;
+    ui_LabelProbe = NULL;
     ui_LabelSWTitle = NULL;
     ui_LabelSWTitle = NULL;
     ui_LabelVersion = NULL;

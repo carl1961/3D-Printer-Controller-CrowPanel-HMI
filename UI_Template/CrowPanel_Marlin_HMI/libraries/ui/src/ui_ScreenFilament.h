@@ -44,9 +44,9 @@ extern lv_obj_t * ui_LabelApplySensors;
 extern void ui_event_BtnSaveSensors(lv_event_t * e);
 extern lv_obj_t * ui_BtnSaveSensors;
 extern lv_obj_t * ui_LabelSaveToEEPROM;
-extern void ui_event_BtnRefresh_Status(lv_event_t * e);
-extern lv_obj_t * ui_BtnRefresh_Status;
-extern lv_obj_t * ui_LabelRefresh_Status;
+extern void ui_event_BtnRefreshStatus(lv_event_t * e);
+extern lv_obj_t * ui_BtnRefreshStatus;
+extern lv_obj_t * ui_LabelRefreshStatus;
 extern lv_obj_t * ui_LabelSensitivityValue;
 // CUSTOM VARIABLES
 extern lv_obj_t * ui_ScreenFilament;
@@ -67,7 +67,8 @@ extern lv_obj_t * ui_BtnApplySensors;
 extern lv_obj_t * ui_LabelApplySensors;
 extern lv_obj_t * ui_BtnSaveSensors;
 extern lv_obj_t * ui_LabelSaveToEEPROM;
-extern lv_obj_t * ui_LabelRefresh_Status;
+extern lv_obj_t * ui_BtnRefreshStatus;
+extern lv_obj_t * ui_LabelRefreshStatus;
 extern lv_obj_t * ui_LabelSensitivityValue;
 
 #ifdef __cplusplus

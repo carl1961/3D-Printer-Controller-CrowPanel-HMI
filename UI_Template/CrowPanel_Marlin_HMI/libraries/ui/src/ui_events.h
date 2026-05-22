@@ -12,7 +12,7 @@ extern "C" {
 
 void ui_eventBtnShutDown(lv_event_t * e);
 void ui_eventArcOverall(lv_event_t * e);
-void ui_event_BarHotend(lv_event_t * e);
+void ui_eventBarHotend(lv_event_t * e);
 void ui_eventBarBed(lv_event_t * e);
 void ui_eventBtnPauseResume(lv_event_t * e);
 void ui_eventBtnStop(lv_event_t * e);
@@ -127,7 +127,7 @@ void ui_eventBtnCheckUpdate(lv_event_t * e);
 void ui_eventBtnShowLogs(lv_event_t * e);
 void ui_eventBtnFactoryReset(lv_event_t * e);
 void ui_eventArcHotend(lv_event_t * e);
-void ui_eventLabelBedValue(lv_event_t * e);
+void ui_eventArcBed(lv_event_t * e);
 void ui_eventBtnPLA(lv_event_t * e);
 void ui_eventBtnPETG(lv_event_t * e);
 void ui_eventBtnABS(lv_event_t * e);
