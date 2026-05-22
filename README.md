@@ -1,5 +1,40 @@
+
 # 3D-Printer-Controller-CrowPanel-HMI
 Work in Progress, HMI screen for Marlin Firmware. Grok designed and programed.
+
+<img width="910" height="594" alt="MainScreen" src="https://github.com/user-attachments/assets/2dbb841f-3bcd-4b0a-a691-23871268fcf3" />
+
+<img width="906" height="590" alt="PrintingScreen" src="https://github.com/user-attachments/assets/b278bf1f-5c5c-4cd2-a7e5-626ac3ba3cc6" />
+
+<img width="908" height="598" alt="JoggingScreen" src="https://github.com/user-attachments/assets/1cd0ecfd-3993-4514-bbec-7b64a62e7848" />
+
+<img width="911" height="597" alt="TMCScreen" src="https://github.com/user-attachments/assets/164e09de-980b-4ed3-adc4-8aee14898a91" />
+
+<img width="910" height="592" alt="FilamentScreen" src="https://github.com/user-attachments/assets/27c2b02b-6efc-491b-88b9-5dd67b7efd14" />
+
+<img width="905" height="590" alt="FilesScreen" src="https://github.com/user-attachments/assets/77b508f5-dfe4-417b-89dd-b06e6373a2ca" />
+
+<img width="908" height="586" alt="SettingsScreen" src="https://github.com/user-attachments/assets/6487c5b5-3dd7-4f20-a615-528692e4e5af" />
+
+<img width="912" height="588" alt="AboutScreen" src="https://github.com/user-attachments/assets/db2ebdc9-cc0b-4516-b527-05dd7fbaa3c3" />
+
+<img width="905" height="590" alt="TemperatureScreen" src="https://github.com/user-attachments/assets/39c97951-6dda-480e-993e-83f08a86b5a2" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Hardware
 
