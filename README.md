@@ -21,6 +21,11 @@ Work in Progress, HMI screen for Marlin Firmware. Grok designed and programed.
 <img width="905" height="590" alt="TemperatureScreen" src="https://github.com/user-attachments/assets/39c97951-6dda-480e-993e-83f08a86b5a2" />
 
 
+working display screens installed using CrowPanel_Marlin_HMI Esp install and flash.zip
+
+work to do:  get ui.h and ui_events.c  etc... into build and recompile to comunicate to marlin firmware.
+
+
 
 
 
